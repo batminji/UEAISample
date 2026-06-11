@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "GenericTeamAgentInterface.h"
 #include "UEAISampleCharacter.generated.h"
 
 class USpringArmComponent;
@@ -19,7 +20,7 @@ DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
  *  Implements a controllable orbiting camera
  */
 UCLASS(abstract)
-class AUEAISampleCharacter : public ACharacter
+class AUEAISampleCharacter : public ACharacter, public IGenericTeamAgentInterface
 {
 	GENERATED_BODY()
 
@@ -92,5 +93,10 @@ public:
 
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	/** IGenericTeamAgentInterface implementation */
+	virtual void SetGenericTeamId(const FGenericTeamId& NewTeamID) override;
+
+	FGenericTeamId TeamID;
 };
 
