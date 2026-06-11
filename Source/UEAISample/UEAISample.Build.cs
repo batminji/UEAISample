@@ -14,7 +14,6 @@ public class UEAISample : ModuleRules
 			"Engine",
 			"InputCore",
 			"EnhancedInput",
-			"AIModule",
 			"StateTreeModule",
 			"GameplayStateTreeModule",
 			"UMG",

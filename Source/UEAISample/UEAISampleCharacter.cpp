@@ -11,6 +11,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "UEAISample.h"
+#include "Perception/AIPerceptionStimuliSourceComponent.h"
 
 AUEAISampleCharacter::AUEAISampleCharacter()
 {
@@ -50,6 +51,7 @@ AUEAISampleCharacter::AUEAISampleCharacter()
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 
 	SetGenericTeamId(1);
+	StimuliSource = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("StimuliSource"));
 }
 
 void AUEAISampleCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
