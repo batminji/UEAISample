@@ -18,8 +18,11 @@ public class UEAISample : ModuleRules
 			"StateTreeModule",
 			"GameplayStateTreeModule",
 			"UMG",
-			"Slate"
-		});
+			"Slate",
+            "SlateCore",
+			"NavigationSystem",
+			"AIModule"
+        });
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
 

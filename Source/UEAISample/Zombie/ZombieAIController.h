@@ -6,14 +6,18 @@
 #include "AIController.h"
 #include "ZombieAIController.generated.h"
 
-/**
- * 
- */
+class UAIPerceptionComponent;
+
 UCLASS()
 class UEAISAMPLE_API AZombieAIController : public AAIController
 {
 	GENERATED_BODY()
 	
 public:
+	AZombieAIController();
+
 	virtual void OnPossess(APawn* InPawn) override;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AI")
+	TObjectPtr<UAIPerceptionComponent> Perception;
 };
