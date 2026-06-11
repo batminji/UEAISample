@@ -2,4 +2,15 @@
 
 
 #include "ZombieAIController.h"
+#include "Zombie.h"
 
+void AZombieAIController::OnPossess(APawn* InPawn)
+{
+	Super::OnPossess(InPawn);
+
+	AZombie* Zombie = Cast<AZombie>(InPawn);
+	if (Zombie && Zombie->BehaviorTree)
+	{
+		RunBehaviorTree(Zombie->BehaviorTree);
+	}
+}
