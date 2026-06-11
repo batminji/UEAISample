@@ -20,4 +20,10 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AI")
 	TObjectPtr<UAIPerceptionComponent> Perception;
+
+	UFUNCTION()
+	void ProcessPerceptionUpdate(AActor* Actor, FAIStimulus Stimulus);
+
+	UFUNCTION()
+	void ProcessPerceptionForgotten(AActor* Actor);
 };
